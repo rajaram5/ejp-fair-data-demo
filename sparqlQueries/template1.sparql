@@ -1,0 +1,27 @@
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX ldp: <http://www.w3.org/ns/ldp#>
+PREFIX ejp: <http://purl.org/ejp-rd/vocabulary/>
+PREFIX orphanet: <http://www.orpha.net/ORDO/Orphanet_>
+
+
+SELECT DISTINCT ?catalogURI ?catalog ?registryURI ?registry ?country WHERE {
+
+  VALUES(?country) {("#country#")}   
+
+  <http://training.fairdata.solutions/DAV/home/EJP_HACK/Jupp/> ldp:contains ?catalog_container .
+
+  GRAPH ?catalog_container {
+    ?catalogURI a ejp:CatalogOfRegistries .
+    ?catalogURI dct:title ?catalog .
+    ?catalogURI dcat:dataset ?registryURI .
+    ?catalog_container ldp:contains ?registry_container
+  }
+  GRAPH ?registry_container {
+    ?registryURI a ?registry_type .
+    FILTER (?registry_type IN (ejp:BiobankDataset, ejp:PatientRegistryDataset))
+    ?registryURI dct:title ?registry .
+    ?registryURI dcat:theme ?disease .
+    ?registryURI dct:publisher [ dct:spatial [ ejp:country ?country] ]
+  }
+}
