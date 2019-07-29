@@ -10,9 +10,9 @@ If you wish to install this app as a docker container then create a docker image
 `Dockerfile` in this directory. The base image of dockerfile is `nginx` thus the app can be 
 access via port `80` of docker container. 
 
-Example build command
+##### Example build command
 `docker build -t <IMAGE_NAME> -f  <PATH_OF_THIS_GIT_REPO>Dockerfile`
 
-Example run command
+##### Example run command
 
 `docker run --name <CONTAINER_NAME> -p <PORT_OF_CHOOSE_AT_HOST>:80 -d <IMAGE_NAME>`
