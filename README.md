@@ -11,7 +11,9 @@ If you wish to install this app as a docker container then create a docker image
 access via port `80` of docker container. 
 
 ##### Example build command
-`docker build -t <IMAGE_NAME> -f  <PATH_OF_THIS_GIT_REPO>Dockerfile`
+`docker build -t <IMAGE_NAME> -f  <PATH_OF_THIS_GIT_REPO> Dockerfile .`
+
+You can also pull docker image of this app from `hub.docker.com`. [Link](https://cloud.docker.com/repository/docker/rajireturn/ejp-fair-data-demo) to the docker image.
 
 ##### Example run command
 
