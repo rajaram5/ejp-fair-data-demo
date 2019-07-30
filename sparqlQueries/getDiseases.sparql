@@ -7,15 +7,15 @@ PREFIX orphanet: <http://www.orpha.net/ORDO/Orphanet_>
 
 SELECT DISTINCT ?url (STR(?value) as ?value) WHERE {
 
-  <http://training.fairdata.solutions/DAV/home/EJP_HACK/Jupp/> ldp:contains ?catalog_container .
+  <http://training.fairdata.solutions/DAV/home/EJP_HACK/Jupp/> ldp:contains ?catalogContainer .
 
-  GRAPH ?catalog_container {
+  GRAPH ?catalogContainer {
     ?catalog a ejp:CatalogOfRegistries .
-    ?catalog_container ldp:contains ?registry_container
+    ?catalogContainer ldp:contains ?registryContainer
   }
-  GRAPH ?registry_container {
-    ?registry a ?registry_type .
-    FILTER (?registry_type IN (ejp:BiobankDataset, ejp:PatientRegistryDataset))
+  GRAPH ?registryContainer {
+    ?registry a ?registryType .
+    FILTER (?registryType IN (ejp:BiobankDataset, ejp:PatientRegistryDataset))
     ?registry dcat:theme ?url .
   }
 
