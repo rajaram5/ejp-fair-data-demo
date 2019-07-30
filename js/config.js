@@ -3,19 +3,19 @@ var SPARQL_ENDPOINT = 'http://training.fairdata.solutions/sparql?query='
 var TEMPLATE_QUERIES = {
   1 : {
     text : 'A user of the virtual platform (VP) wants to discover all patient registries for a particular country',
-    variables : [ 'country' ],
+    variables : [ 'country', 'registryType'],
     query : readFile('sparqlQueries/template1.sparql', 'text')
 
   },
   2 : {
     text : 'A user of the virtual platform (VP) wants to discover all patient registries that deal with specific disease',
-    variables : [ 'disease' ],
+    variables : [ 'disease', 'registryType'],
     query : readFile('sparqlQueries/template2.sparql', 'text')
   },
 
   3 : {
     text : 'A user of the virtual platform (VP) wants to discover all patient registries for a particular disease in their country',
-    variables : [ 'disease', 'country' ],
+    variables : [ 'disease', 'country', 'registryType'],
     query : readFile('sparqlQueries/template1.sparql', 'text')
 
   },
@@ -23,7 +23,8 @@ var TEMPLATE_QUERIES = {
 
 var VARIABLE_QUERIES = {
   country : readFile('sparqlQueries/getCountries.sparql', 'text'),
-  disease : readFile('sparqlQueries/getDiseases.sparql', 'text')
+  disease : readFile('sparqlQueries/getDiseases.sparql', 'text'),
+  registryType : readFile('sparqlQueries/getRegistryType.sparql', 'text')
 
 }
 

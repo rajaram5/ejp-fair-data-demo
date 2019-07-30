@@ -8,6 +8,7 @@ PREFIX orphanet: <http://www.orpha.net/ORDO/Orphanet_>
 SELECT DISTINCT ?catalogURI ?catalog ?registryURI ?registry ?country WHERE {
 
   VALUES(?country) {("#country#")}   
+  VALUES(?registryType) {(<#registryType#>)}  
 
   <http://training.fairdata.solutions/DAV/home/EJP_HACK/Jupp/> ldp:contains ?catalog_container .
 
@@ -18,8 +19,7 @@ SELECT DISTINCT ?catalogURI ?catalog ?registryURI ?registry ?country WHERE {
     ?catalog_container ldp:contains ?registry_container
   }
   GRAPH ?registry_container {
-    ?registryURI a ?registry_type .
-    FILTER (?registry_type IN (ejp:BiobankDataset, ejp:PatientRegistryDataset))
+    ?registryURI a ?registryType .
     ?registryURI dct:title ?registry .
     ?registryURI dcat:theme ?disease .
     ?registryURI dct:publisher [ dct:spatial [ ejp:country ?country] ]
