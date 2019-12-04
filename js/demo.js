@@ -42,7 +42,7 @@ document.getElementById("template").onchange = function() {
     $("#disease").removeClass('hidden');
   }  
   if (TEMPLATE_QUERIES[selected].variables.indexOf('resourceType') > -1) {
-    $("#registryType").removeClass('hidden');
+    $("#resourceType").removeClass('hidden');
   }
   // Fill step2  	
   TEMPLATE_QUERIES[selected].variables.forEach(function(entry) {
