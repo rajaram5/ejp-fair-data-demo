@@ -1,4 +1,4 @@
-var SPARQL_ENDPOINT = 'http://training.fairdata.solutions/sparql?query='
+var SPARQL_ENDPOINT = 'http://ejprd.fair-dtls.surf-hosted.nl:8890/sparql?query='
 
 var TEMPLATE_QUERIES = {
   1 : {
