@@ -8,7 +8,7 @@ PREFIX orphanet: <http://www.orpha.net/ORDO/Orphanet_>
 SELECT DISTINCT ?catalogURI ?catalog ?registryURI ?registry ?country WHERE {
 
   VALUES(?country) {("#country#")}   
-  VALUES(?registryType) {(<#registryType#>)}  
+  VALUES(?registryType) {(<#resourceType#>)}  
 
   ?baseContainer ldp:contains ?catalogContainer .
 

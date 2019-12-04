@@ -3,19 +3,19 @@ var SPARQL_ENDPOINT = 'http://ejprd.fair-dtls.surf-hosted.nl:8890/sparql?query='
 var TEMPLATE_QUERIES = {
   1 : {
     text : 'Find patient registries or biobanks located in a particular country',
-    variables : [ 'country', 'registryType'],
+    variables : [ 'country', 'resourceType'],
     query : readFile('sparqlQueries/template1.rq', 'text')
 
   },
   2 : {
     text : 'Find patient registries or biobanks linked to a specific disease',
-    variables : [ 'disease', 'registryType'],
+    variables : [ 'disease', 'resourceType'],
     query : readFile('sparqlQueries/template2.rq', 'text')
   },
 
   3 : {
     text : 'Find patient registries or biobanks located in a particular country and linked to a specific disease',
-    variables : [ 'disease', 'country', 'registryType'],
+    variables : [ 'disease', 'country', 'resourceType'],
     query : readFile('sparqlQueries/template1.rq', 'text')
 
   },
@@ -24,7 +24,7 @@ var TEMPLATE_QUERIES = {
 var VARIABLE_QUERIES = {
   country : readFile('sparqlQueries/getCountries.rq', 'text'),
   disease : readFile('sparqlQueries/getDiseases.rq', 'text'),
-  registryType : readFile('sparqlQueries/getRegistryType.rq', 'text')
+  resourceType : readFile('sparqlQueries/getResourceType.rq', 'text')
 
 }
 

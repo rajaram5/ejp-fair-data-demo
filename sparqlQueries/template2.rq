@@ -8,7 +8,7 @@ PREFIX orphanet: <http://www.orpha.net/ORDO/Orphanet_>
 SELECT DISTINCT ?catalogURI ?catalog ?registryURI ?registry ?country ?diseaseURI ?disease WHERE {
  
   VALUES(?diseaseInput) {(<#disease#>)}   
-  VALUES(?registryType) {(<#registryType#>)} 
+  VALUES(?registryType) {(<#resourceType#>)} 
   
   ?diseaseURI  rdfs:subClassOf* ?diseaseInput.
 
