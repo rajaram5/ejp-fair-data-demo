@@ -2,19 +2,19 @@ var SPARQL_ENDPOINT = 'http://ejprd.fair-dtls.surf-hosted.nl:8890/sparql?query='
 
 var TEMPLATE_QUERIES = {
   1 : {
-    text : 'A user of the virtual platform (VP) wants to discover all patient registries for a particular country',
+    text : 'Find patient registries or biobanks located in a particular country',
     variables : [ 'country', 'registryType'],
     query : readFile('sparqlQueries/template1.rq', 'text')
 
   },
   2 : {
-    text : 'A user of the virtual platform (VP) wants to discover all patient registries that deal with specific disease',
+    text : 'Find patient registries or biobanks linked to a specific disease',
     variables : [ 'disease', 'registryType'],
     query : readFile('sparqlQueries/template2.rq', 'text')
   },
 
   3 : {
-    text : 'A user of the virtual platform (VP) wants to discover all patient registries for a particular disease in their country',
+    text : 'Find patient registries or biobanks located in a particular country and linked to a specific disease',
     variables : [ 'disease', 'country', 'registryType'],
     query : readFile('sparqlQueries/template1.rq', 'text')
 
