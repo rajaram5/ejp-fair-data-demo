@@ -4,7 +4,7 @@ PREFIX ejp: <http://purl.org/ejp-rd/vocabulary/>
 
 SELECT DISTINCT ?value WHERE {
 
-  <http://training.fairdata.solutions/DAV/home/EJP_HACK/Jupp/> ldp:contains ?catalogContainer .
+  ?baseContainer ldp:contains ?catalogContainer .
 
   GRAPH ?catalogContainer {
     ?catalog a ejp:CatalogOfRegistries .

@@ -12,7 +12,7 @@ SELECT DISTINCT ?catalogURI ?catalog ?registryURI ?registry ?country ?diseaseURI
   
   ?diseaseURI  rdfs:subClassOf* ?diseaseInput.
 
-  <http://training.fairdata.solutions/DAV/home/EJP_HACK/Jupp/> ldp:contains ?catalogContainer .
+  ?baseContainer ldp:contains ?catalogContainer .
 
   GRAPH ?catalogContainer {
     ?catalogURI a ejp:CatalogOfRegistries .

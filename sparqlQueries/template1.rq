@@ -10,7 +10,7 @@ SELECT DISTINCT ?catalogURI ?catalog ?registryURI ?registry ?country WHERE {
   VALUES(?country) {("#country#")}   
   VALUES(?registryType) {(<#registryType#>)}  
 
-  <http://training.fairdata.solutions/DAV/home/EJP_HACK/Jupp/> ldp:contains ?catalogContainer .
+  ?baseContainer ldp:contains ?catalogContainer .
 
   GRAPH ?catalogContainer {
     ?catalogURI a ejp:CatalogOfRegistries .
