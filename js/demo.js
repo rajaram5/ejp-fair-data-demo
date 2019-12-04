@@ -27,7 +27,7 @@ document.getElementById("template").onchange = function() {
 
   $("#country").addClass('hidden');
   $("#disease").addClass('hidden');
-  $("#registryType").addClass('hidden');  
+  $("#resourceType").addClass('hidden');  
   $("#errorPanel").addClass('hidden');
   $('#results_table').empty();
   $("#noResultPanel").addClass('hidden');
@@ -41,7 +41,7 @@ document.getElementById("template").onchange = function() {
   if (TEMPLATE_QUERIES[selected].variables.indexOf('disease') > -1) {
     $("#disease").removeClass('hidden');
   }  
-  if (TEMPLATE_QUERIES[selected].variables.indexOf('registryType') > -1) {
+  if (TEMPLATE_QUERIES[selected].variables.indexOf('resourceType') > -1) {
     $("#registryType").removeClass('hidden');
   }
   // Fill step2  	
