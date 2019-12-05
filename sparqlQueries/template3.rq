@@ -8,10 +8,10 @@ PREFIX orphanet: <http://www.orpha.net/ORDO/Orphanet_>
 SELECT DISTINCT ?catalogURI ?catalog ?registryURI ?registry ?country ?diseaseURI ?disease WHERE {
 
   VALUES(?country) {("#country#")} 
-  VALUES(?diseaseInput) {(<#disease#>)}   
+  VALUES(?diseaseURI) {(<#disease#>)}   
   VALUES(?registryType) {(<#resourceType#>)}   
   
-  ?diseaseURI  rdfs:subClassOf* ?diseaseInput.
+  #?diseaseURI  rdfs:subClassOf* ?diseaseInput.
 
   ?baseContainer ldp:contains ?catalogContainer .
 
@@ -25,9 +25,10 @@ SELECT DISTINCT ?catalogURI ?catalog ?registryURI ?registry ?country ?diseaseURI
     ?registryURI a ?registryType .
     ?registryURI dct:title ?registry .
     ?registryURI dcat:theme ?diseaseURI .
-    ?registryURI dct:publisher [ dct:spatial [ ejp:country ?country] ]    
-
+    
+    ?registryURI dct:publisher [ dct:spatial [ ejp:country ?countryStr] ]
   }
+  FILTER(lcase(?countryStr) = ?country)
   
   ?diseaseURI rdfs:label ?disease
 

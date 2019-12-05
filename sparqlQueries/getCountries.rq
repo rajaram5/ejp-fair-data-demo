@@ -11,8 +11,10 @@ SELECT DISTINCT ?value WHERE {
     ?catalogContainer ldp:contains ?registryContainer
   }
   GRAPH ?registryContainer {
-    ?registry dct:publisher [ dct:spatial [ ejp:country ?value] ]
+    ?registry dct:publisher [ dct:spatial [ ejp:country ?countryStr] ]
     FILTER (?value != "")
+   
+   BIND(lcase(?countryStr) AS ?value)  
 
   }
-}
+} ORDER BY ?value

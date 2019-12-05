@@ -4,4 +4,5 @@ PREFIX ejp: <http://purl.org/ejp-rd/vocabulary/>
 SELECT DISTINCT ?url ?value WHERE {
 
   VALUES(?url ?value) {(ejp:BiobankDataset "Biobank") (ejp:PatientRegistryDataset "PatientRegistry")}
-}
+
+} ORDER BY ?value

@@ -22,4 +22,4 @@ SELECT DISTINCT ?url (STR(?value) as ?value) WHERE {
    ?url rdfs:label ?value
    FILTER (lang(?value) = 'en')
 
-}
+} ORDER BY ?value
